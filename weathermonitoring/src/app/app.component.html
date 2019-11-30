@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<h2> </h2>
+<div>
+  <mat-form-field>
+    <input matInput type="datetime-local" placeholder="start date" [(ngModel)]="start">
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field>
+    <input matInput type="datetime-local" placeholder="end date" [(ngModel)]="end">
+  </mat-form-field>
+</div>
+
+<mat-form-field>
+  <mat-select placeholder="Select" [(ngModel)]="city">
+    <mat-option value="Pune">Pune</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button mat-button (click)="submit()">Search</button>
+<router-outlet></router-outlet>
