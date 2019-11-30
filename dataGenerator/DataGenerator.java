@@ -95,7 +95,7 @@ public class DataGenerator implements Runnable {
 
 		Thread[] dispatchers = new Thread[numberOfThreads];
 		for (int i = 0, fromCity = 0; i < dispatchers.length; i++, fromCity += (fromCity + numCities/dispatchers.length)) {
-			DataGenerator dg = new DataGenerator(producer, "topic" + i, fromCity, (fromCity - 1 + numCities/dispatchers.length), numSensorPerCity, timeStamp);
+			DataGenerator dg = new DataGenerator(producer, "topic" + i, fromCity, (fromCity + (numCities/dispatchers.length - 1)), numSensorPerCity, timeStamp);
 			dispatchers[i] = new Thread();
 			dispatchers[i].start();
 		}
